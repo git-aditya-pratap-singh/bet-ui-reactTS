@@ -1,0 +1,216 @@
+.sidebar-cover {
+    // background-color: #1f1f1f;
+    background-color: var(--navbar-bg);
+    padding-top: 0;
+    border-radius: 8px;
+    height: calc(100vh - 110px);
+    left: 20px;
+    margin-top: 90px;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    transition: all .3s ease;
+    width: 200px;
+
+    .firstUl {
+        border-radius: 4px;
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        overflow: auto;
+        padding: 0;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        li {
+            padding: 0.5rem;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 0.6rem;
+            border-top: 1px solid #000;
+            padding: 10px 0;
+            position: relative;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &::after {
+                content: "";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transition: all .3s ease;
+                width: 0;
+                z-index: -1;
+                background: linear-gradient(260deg, #000000e3 5.69%, #ac73ffe6);
+            }
+
+            &:hover::after {
+                right: 0;
+                transition: all .3s ease;
+                width: 100%;
+            }
+
+            span {
+                margin-left: 25px;
+                cursor: pointer;
+            }
+
+            label {
+                color: #fff !important;
+                font-size: 0.8rem;
+                font-weight: 700;
+                cursor: pointer;
+               font-family: "Montserrat", sans-serif;
+            }
+
+            &:nth-child(1)>span {
+                background: url('../img/icons.png') 0 -216px !important;
+                background-repeat: no-repeat !important;
+                height: 24px !important;
+                width: 24px !important;
+            }
+
+            &:nth-child(2)>span {
+                background: url('../img/icons.png') 0 -696px !important;
+                background-repeat: no-repeat !important;
+                height: 24px !important;
+                width: 24px !important;
+            }
+
+            &:nth-child(3)>span {
+                background: url('../img/icons.png') 0 -650px !important;
+                background-repeat: no-repeat !important;
+                height: 24px !important;
+                width: 24px !important;
+            }
+
+            &:nth-child(4)>span {
+                background: url('../img/icons.png') 0 0 !important;
+                background-repeat: no-repeat !important;
+                height: 24px !important;
+                width: 24px !important;
+            }
+
+            svg {
+                color: #fff;
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+
+
+        }
+    }
+
+    .subIcon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        background-image: url("../img/icons.png");
+        background-repeat: no-repeat;
+    }
+
+    .icon-cricket {
+        background-position: 0 -480px !important;
+    }
+
+    .icon-tennis {
+        background-position: 0 -24px !important;
+    }
+
+    .icon-football {
+        background-position: 0 -288px !important;
+    }
+
+    .icon-jackpot {
+        background-position: 0 -873px !important;
+    }
+
+    .icon-casino {
+        background-position: 0 -456px !important;
+    }
+
+    .icon-election {
+        background-position: 0 -336px !important;
+    }
+
+    .aviator {
+        background-position: 0 -600px !important;
+    }
+
+    .lucky7 {
+        background-position: 0 -192px !important;
+    }
+
+    .crazytime2 {
+        background-position: 0 -504px !important;
+    }
+
+    .twinwins {
+        background-position: 0 -672px !important;
+    }
+
+    .cricketwar {
+        background-position: 0 -432px !important;
+    }
+
+    .magiclamp {
+        background-position: 0 -168px !important;
+    }
+
+    .party {
+        background-position: 0 -408px !important;
+    }
+
+    .akbarromeowalter {
+        background-position: 0 -552px !important;
+    }
+
+    .bookofgold {
+        background-position: 0 -576px !important;
+    }
+
+    .dragontiger {
+        background-position: 0 -360px !important;
+    }
+
+}
+
+.sidebar-close {
+    width: 70px;
+    transition: all .3s ease;
+    .firstUl{
+        li{
+            label{
+                display: none;
+            }
+            svg{
+                display: none
+            }
+        }
+    }
+}
+
+.subMenuSide{
+    transition: height 0.8s ease-in-out;
+
+}
+
+@media only screen and (max-width: 1041px){
+    .sidebar-cover{
+       //width: 70px;
+        .firstUl{
+            li{
+                label{
+                    display: none;
+                }
+                svg{
+                    display: none
+                }
+            }
+        }
+    }
+}

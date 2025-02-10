@@ -1,0 +1,26 @@
+
+.dropDown{
+    background-image: url('../img/search-icon.svg');
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    color: #fff;
+    color: var(--sidebar-nav-link);
+    // left: 0;
+    // overflow: hidden;
+    // padding: 0 25px 0 10px;
+    // position: absolute;
+    // top: 0;
+    // z-index: 2;
+    .search-btn{
+        width: 100%;
+        background-color: var(--input-bg);
+        border: 0;
+        border-radius: 8px;
+        height: 35px;
+        font-size :0.85rem;
+        padding: 10px;
+        color: #fff;
+        position: relative;
+    }
+}

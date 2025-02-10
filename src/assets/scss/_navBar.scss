@@ -1,0 +1,279 @@
+.app-header {
+    background-color: var(--app-bg);
+    left: 20px;
+    padding-top: 20px;
+    position: fixed;
+    top: 0px;
+    width: calc(100% - 40px);
+    z-index: 2;
+
+    .nav-header {
+        background-color: var(--navbar-bg);
+        border-radius: 8px;
+        font-family: Montserrat, sans-serif;
+        font-family: var(--secondary-font);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        position: fixed;
+        width: calc(100% - 40px);
+        z-index: 2;
+
+        .nav-header-sectionA {
+            padding: 0.5rem 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            align-items: center;
+
+            .hamburger-icon {
+                cursor: pointer;
+                display: inline-block;
+                height: 14px;
+                position: relative;
+                vertical-align: middle;
+                width: 20px;
+                
+                span {
+                    background-color: var(--switch-btn-bg);
+                    border-radius: 2px;
+                    display: block;
+                    height: 2px;
+                    left: 0;
+                    position: absolute;
+                    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+                    width: 100%;
+                    background-color: #ac73ff;
+
+                    &:nth-child(1) {
+                        top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 6px;
+                    }
+
+                    &:nth-child(3) {
+                        bottom: 0;
+                        width: 60%;
+                    }
+                }
+            }
+
+            .open {
+                span {
+                    &:first-child {
+                        top: 7px;
+                        transform: rotate(45deg);
+                        width: 25px;
+                    }
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:last-child {
+                        top: 7px;
+                        transform: rotate(-45deg);
+                        width: 25px;
+                    }
+                }
+            }
+
+        }
+
+        .nav-header-sectionB {
+            padding: 0.5rem 0.9rem;
+
+            ul {
+                display: flex !important;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2rem;
+
+                li {
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4rem;
+                    color: #fff;
+                    transition: all 0.5s ease-in-out;
+                    cursor: pointer;
+
+                    &:nth-child(1)>span {
+                        background: url('../img/icons.png') 0 -650px !important;
+                        background-repeat: no-repeat !important;
+                        height: 24px !important;
+                        width: 24px !important;
+                    }
+
+                    &:nth-child(2)>span {
+                        background: url('../img/icons.png') 0 0 !important;
+                        background-repeat: no-repeat !important;
+                        height: 24px !important;
+                        width: 24px !important;
+                    }
+
+                    &:nth-child(3)>span {
+                        background: url('../img/icons.png') 0 -408px !important;
+                        background-repeat: no-repeat !important;
+                        height: 24px !important;
+                        width: 24px !important;
+                    }
+
+                    &:nth-child(4)>span {
+                        background: url('../img/icons.png') 0 -120px !important;
+                        background-repeat: no-repeat !important;
+                        height: 24px !important;
+                        width: 24px !important;
+                    }
+
+                    &:hover {
+                        background-color: var(--blue-color);
+                    }
+
+                    &:active {
+                        background-color: var(--blue-color);
+                    }
+
+                    label {
+                        font-weight: 400 !important;
+                        font-size: 0.9rem !important;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .nav-header-sectionC {
+            padding: 0.5rem 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.8rem;
+
+            .theme-btn {
+                padding: 0.4rem;
+                min-width: 100px;
+                text-transform: uppercase;
+                font-family: var(--primary-font);
+                font-size: .65rem;
+                font-weight: 600;
+                color: var(--white-color);
+                border-radius: 5px;
+                border: 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                .icon1 {
+                    background: url('../img/icons.png') 0 -384px !important;
+                    background-repeat: no-repeat !important;
+                    height: 24px !important;
+                    width: 24px !important;
+                    display: none;
+                }
+
+                .icon2 {
+                    background: url('../img/icons.png') 0 -144px !important;
+                    background-repeat: no-repeat !important;
+                    height: 24px !important;
+                    width: 24px !important;
+                    display: none;
+                }
+            }
+            .login{
+                background-color: #ac73ff;
+                cursor: pointer;
+            }
+            .register{
+                background: #1a1e24;
+                border: 1px solid #d0d0d0;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .depositBtn {
+                background: linear-gradient(177.6deg, #60b20e 2.01%, #0a924a 93.16%, #11e773 116.81%);
+            }
+
+            .withdrawalBtn {
+                background: linear-gradient(177.6deg, red 2.01%, #c62128 93.16%, #e50914 116.81%);
+            }
+
+            .svgIcon {
+                cursor: pointer;
+            }
+
+            .dropdown-toggle {
+                background-color: rgb(40, 40, 40);
+                padding: 0.3rem 0.5rem;
+                border-radius: 5px;
+                align-items: center;
+                display: flex;
+                font-size: 12px;
+                gap: 5px;
+                color: #fff;
+
+                svg {
+                    max-width: 15px;
+                }
+
+                .text-white {
+                    --bs-text-opacity: 1;
+                    color: rgba(255, 255, 255, var(--bs-text-opacity)) !important;
+                }
+
+                &::after {
+                    border-bottom: 0;
+                    border-left: .3em solid #0000;
+                    border-right: .3em solid #0000;
+                    border-top: .3em solid;
+                    content: "";
+                    display: inline-block;
+                    margin-left: .255em;
+                    vertical-align: .255em;
+                }
+            }
+
+        }
+    }
+}
+
+.withdraw {
+    background-color: #1c1c1c;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    top: 3rem;
+}
+
+@media only screen and (max-width: 1041px) {
+    .app-header {
+        .nav-header {
+            .nav-header-sectionB {
+                display: none;
+            }
+
+            .nav-header-sectionC {
+                .theme-btn {
+                    min-width: 50px;
+
+                    .icon1,
+                    .icon2 {
+                        display: block;
+                    }
+
+                    label {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

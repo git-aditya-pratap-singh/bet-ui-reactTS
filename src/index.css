@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  /* using Responsive*/
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
+
+  /* using color */
+
+  --slide-down: slide-down 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Montserrat", sans-serif;
+  --white-color: #fff;
+  --black-color: #000;
+  --app-bg: #0a0a0a;
+  --navbar-bg: #141414;
+  --headar-nav-link: #969696;
+  --blue-color: #ac73ff;
+  --ice-blue: #cae6ff;
+  --navseprator-color: var(--white-color);
+  --bg-theme: var(--black-color);
+  --input-hover: #333;
+  --wallet-border: var(--black-color);
+  --wallet-bg: #ebecec1a;
+  --wallet-color: #999;
+  --nav-icons-bg: #1a1e24;
+  --nav-icons-color: var(--white-color);
+  --logo-path-first: var(--white-color);
+  --logo-path-second: var(--blue-color);
+  --sidebar-nav-link: var(--white-color);
+  --game-heading-bg: #292929;
+  --game-heading-color: var(--white-color);
+  --game-title-svg: var(--white-color);
+  --linear-play-btn: linear-gradient(180deg, #515152, #5151525c);
+  --team-title-color: var(--white-color);
+  --game-name: #7e7e7e;
+  --dual-btn-border: #3f3f3f;
+  --grad--btn-gry: linear-gradient(180deg, #2d2d2d 0.01%, #7e7e7e 6.25%, #3f3f3f 92.19%, #757677);
+  --grad--btn-gry-text: #c9c9c9;
+  --grad--btn-blue: #ac73ff;
+  --red-color: #e01e1e;
+  --bet-row-bg: #1f1f1f;
+  --point-btns-bg: #292929;
+  --live-status: linear-gradient(180deg, #93ff00, #345900 92.71%, #3a6400);
+  --team-abbr-circle: radial-gradient(50% 50% at 50% 50%, #8531ff 0%, #ac73ff 100%);
+  --team-full-name: var(--white-color);
+  --btn-primary-bg: #292929;
+  --btn-whatsapp-bg: #008d05;
+  --btn-primary-active-bg: #ac73ff;
+  --btn-primay-color: #fff;
+  --btn-market-bg: linear-gradient(180deg, #777, #434343 92%, #777);
+  --quntity-input-bg: #25282b;
+  --qty-btn-bg: linear-gradient(90deg, #ac73ff, #ac73ff 53.11%, #0079e8 53.13%, #005cb0);
+  --btn-custom-bg: #ebecec;
+  --btn-custom-border: #000;
+  --btn-cus-color: #585858;
+  --drp-body-bg: linear-gradient(0deg, #25282b, #25282b), linear-gradient(0deg, #25282b, #25282b), linear-gradient(0deg, #25282b, #25282b), linear-gradient(0deg, #25282b, #25282b);
+  --drp-btn-bg: #383838;
+  --drp-btn-border: #fffefe;
+  --modal-bg: #212529;
+  --input-bg: #000;
+  --input-border: #3f3f3f;
+  --switch-btn-bg: #999898;
+  --bet-place: #535353;
+  --modal-close-btn: var(--wallet-color);
+  --versus-text: #f1f1f1;
+  --header-drp-bg: var(--game-heading-bg);
+  --dropdown-svg-color: var(--white-color);
+  --bet-row-hover: #323030;
+  --table-border-color: #343232;
+  --table-row-hover: #4e5050;
+  --table-head-bg: #303030;
+  --sidebar-icon-bg: #2e2d2d;
+  --bet-btn-blue: #ac73ff;
+  --bet-btn-pink: #faa9ba;
+  --bet-btn-overlay: #242424c7;
+  --back-lay-border: #103e60;
+  --bet-back-value-color: #2877e1;
+  --right-lay-bg: #4c1c42;
+  --bet-lay-value-color: #faa9ba;
+  --toolti-bg: #0a0a0a;
+  --toolti-bg-border: #383838;
+  --toolti-arrow-bg: #383838;
+  --exposure-status: #faa9ba;
+  --countDown-bg: #086fcd;
+  --countDown-border: #0c6ac1;
+  --countDown-color: #fff;
+  --coundDown-cover-color: #fff;
+  --depositMethod-bg: #9d9d9d;
+  --navLinkColor: #fff;
+  --landingPageWhiteColor: #fff;
+  --landingPageBlueColor: #ac73ff;
+  --landingPageWhiteColorFaded: #ffffff14;
+  --landingPageBlackColor: #121213;
+  --changePaymentTitle: #fff;
+  --formLabel: #fff;
+
+
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #07bc0c;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: #ffffffb3;
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+  --toastify-color-progress-light: linear-gradient(90deg, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+
+}
+
+body, html {
+  background-color: #0a0a0a;
+  background-color: var(--app-bg);
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  height: 100%;
+  padding: 0.5rem;
+  
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+/* body {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: #fff;
+  background-color: var(--bs-body-bg);
+  color: #212529;
+  color: var(--bs-body-color);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: var(--bs-body-font-family);
+  font-size: 1rem;
+  font-size: var(--bs-body-font-size);
+  font-weight: 400;
+  font-weight: var(--bs-body-font-weight);
+  line-height: 1.5;
+  line-height: var(--bs-body-line-height);
+  margin: 0;
+  text-align: var(--bs-body-text-align);
+} */

@@ -1,0 +1,151 @@
+.loginBackDiv {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    background-color: #1111119b;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    position: fixed;
+    z-index: 3;
+
+    .loginContainer {
+        padding: 2rem 3rem 2rem 0rem;
+        border-radius: 5px;
+        background-color: #212529;
+        display: flex;
+        justify-content: center;
+        gap: 0.6rem;
+        align-items: start;
+        position: relative;
+        animation: var(--slide-down);
+
+        .imageBanner {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap: 0.6rem;
+            // background-color: red;
+            min-width: 300px;
+
+            img {
+                max-width: 120px !important;
+            }
+
+            label {
+                color: var(--nav-icons-color) !important;
+                font-size: 13px !important;
+                font-weight: 500 !important;
+            }
+
+            .login-via-otp {
+                margin: 0 0 10px;
+                position: relative;
+                text-align: center;
+                width: 100%;
+
+                &::before {
+                    background: #000;
+                    bottom: 0;
+                    content: "";
+                    height: 1px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 20%;
+                    z-index: 4;
+                }
+
+                span {
+                    color: #ac73ff;
+                    cursor: pointer;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+
+                &::after {
+                    background: #000;
+                    bottom: 0;
+                    content: "";
+                    height: 1px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 20%;
+                    z-index: 4;
+                }
+            }
+
+            .form-label {
+                color: #fff;
+                color: var(--nav-icons-color);
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+            .form-control {
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                color: #fff;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 1.5;
+                padding: .375rem .75rem;
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                width: 100%;
+            }
+
+            .text-forgot {
+                width: 100%;
+                color: #ac73ff;
+                font-size: 13px;
+                text-decoration: none;
+                text-align: center;
+                font-weight: 400;
+            }
+
+            .primary-btn {
+                background: #ac73ff;
+                color: #fff;
+                font-size: 0.85rem;
+                font-weight: 500;
+                height: 30px;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-decoration: none;
+                border-radius: 5px;
+                width: 100%;
+                cursor: pointer;
+            }
+
+            .text-footer {
+                margin-top: 0.5rem;
+                width: 100%;
+                font-size: 13px;
+                text-decoration: none;
+                cursor: pointer;
+                p{
+                    color: #fff;
+                }
+                label{
+                    color: var(--blue-color) !important;
+                    cursor:  pointer !important;
+                    font-weight: 600 !important;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,79 @@
+.sideBanner-grid {
+    height: calc(-110px + 100vh);
+    margin-top: 90px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 275px;
+    overflow: hidden auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gridSystem {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        padding: 0.3rem;
+        cursor: pointer;
+
+        .content {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+
+            img {
+                height: 80px;
+                width: 120px !important;
+                border-radius: 10px;
+            }
+
+            &:hover>.content-overlay {
+                bottom: 0px;
+                height: 100%;
+                left: 0px;
+                opacity: 8;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.534);
+                transition: 0.8s ease-in-out;
+                z-index: 1;
+            }
+
+            &:hover>.fadeIn-bottom {
+                top: 80%;
+            }
+
+            .content-details>p {
+                display: none;
+            }
+
+            &:hover>.content-details {
+                left: 50%;
+                opacity: 8;
+                padding-left: 1em;
+                padding-right: 1em;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                transition: 0.6s ease-in-out;
+                z-index: 9999999;
+
+                p {
+                    display: block;
+                    color: rgb(255, 255, 255);
+                    font-size: 0.8em;
+                    margin-bottom: 0px !important;
+                    font-weight: 400;
+                }
+            }
+
+
+        }
+    }
+}
