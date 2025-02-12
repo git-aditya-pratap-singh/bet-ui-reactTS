@@ -1,0 +1,45 @@
+.table-search {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--nav-icons-color);
+    font-size: 13px;
+    height: 35px;
+    justify-self: end;
+    padding-left: 10px;
+    max-width: 300px;
+
+    &::placeholder {
+        color: #686767;
+    }
+}
+.titleDate {
+    white-space: nowrap;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.input-date {
+    border-radius: 8px;
+    color: var(--nav-icons-color);
+    font-size: 13px;
+    height: 35px;
+    justify-self: end;
+    padding-left: 10px;
+    width: 100%;
+}
+.account-body {
+    margin-top: 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    p{
+        font-size: 0.9rem;
+    }
+}

@@ -37,7 +37,10 @@ const Dashboard = () => {
                   </div>
                 </marquee>
               </div>
-              <Outlet />
+              {/* <div className="_outletWidth"> */}
+                 <Outlet />
+              {/* </div> */}
+              
             </div>
             <GameplayImageSlider />
           </div>

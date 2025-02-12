@@ -1,0 +1,16 @@
+.account-withdraw-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        border: 1px solid #3d3d3d !important;
+        font-size: 0.8rem;
+        cursor: pointer;
+        color: #fff;
+        background-color: #ac73ff;
+    }
+}

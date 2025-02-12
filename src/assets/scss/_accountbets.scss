@@ -1,0 +1,12 @@
+.bets-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bets-body{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.7s ease-in-out;
+}

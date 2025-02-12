@@ -3,6 +3,12 @@ import AppDashBoard from "../pages/AppDashBoard";
 import AppOutlet from "../components/subcomponents/AppOutlet";
 import AppoutletVerify from "../_guards/AppoutletVerify";
 import Accounts from "../components/accounts/Accounts";
+import AccountStatements from "../components/accounts/AccountStatement";
+import AccountWithdraw from "../components/accounts/AccountWithdraw";
+import AccountStakeButton from "../components/accounts/AccountStakeButton";
+import AccountTranscation from "../components/accounts/AccountTranscation";
+import AccountBonusList from "../components/accounts/AccountBonusList";
+import AccountOpenBets from "../components/accounts/AccountOpenBets";
 
 const router = createBrowserRouter([
     {
@@ -80,7 +86,31 @@ const router = createBrowserRouter([
                     {
                         index: true,
                         path: "/account/user-profile",
-                        element: <h1>Profile</h1>
+                        element: <AccountStatements/>
+                    },
+                    {
+                        path: "/account/account-statement",
+                        element: <AccountStatements/>
+                    },
+                    {
+                        path: "/account/account-withdraw",
+                        element: <AccountWithdraw/>
+                    },
+                    {
+                        path: "/account/change-stakeButton",
+                        element: <AccountStakeButton/>
+                    },
+                    {
+                        path: "/account/transaction-history",
+                        element: <AccountTranscation/>
+                    },
+                    {
+                        path: "/account/bonus",
+                        element: <AccountBonusList/>
+                    },
+                    {
+                        path: "/account/open-bets",
+                        element: <AccountOpenBets/>
                     }
                 ]
             }

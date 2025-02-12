@@ -7,6 +7,7 @@ import SearchModels from "../../subcomponents/SearchModels";
 import {sidebar, func_loginPopup, func_registrationPopup} from "../../../redux/slices/StateSlice";
 
 import "../../../../assets/scss/_navBar.scss";
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -15,7 +16,10 @@ const Navbar = () => {
 
     const [toggle, setToggle] = useState(false);
     const [withdrawtoggle, setwithdrawToggle] = useState(false);
-    const [searchToggle, setsearchToggle] = useState(false)
+    const [searchToggle, setsearchToggle] = useState(false);
+    const [active, setActive] = useState(1);
+    const location = useLocation();
+    console.log(location)
 
     return (
         <section className="app-header">
@@ -43,7 +47,7 @@ const Navbar = () => {
                         {
                             headerNavigation.map((items) => {
                                 return (
-                                    <li key={items?.id} className=''>
+                                    <li key={items?.id} className={`${active == 1 ? 'active' : ''}`}>
                                         <span className="navIcon1" ></span>
                                         <label>{items?.name}</label>
                                     </li>
