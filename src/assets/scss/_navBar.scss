@@ -4,7 +4,6 @@
     padding-top: 20px;
     position: fixed;
     top: 0px;
-    width: calc(100% - 40px);
     z-index: 2;
 
     .nav-header {
@@ -258,7 +257,9 @@
 
 @media only screen and (max-width: 1041px) {
     .app-header {
+        left: 10px;
         .nav-header {
+            width: calc(100% - 20px);
             .nav-header-sectionB {
                 display: none;
             }
@@ -272,7 +273,7 @@
                         display: block;
                     }
 
-                    label {
+                    .text {
                         display: none;
                     }
                 }

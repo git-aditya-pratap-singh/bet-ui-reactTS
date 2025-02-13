@@ -16,6 +16,10 @@ const LoginModels = () => {
         dispatch(func_registrationPopup(true));
     }
 
+    const loginDemoModels = ()=>{
+        localStorage.setItem('loginStatus',true);
+    }
+
     return (
         <section className="loginBackDiv">
 
@@ -83,7 +87,7 @@ const LoginModels = () => {
                         )}
                         <div className="text-forgot">Forgot Password?</div>
                         <button type="submit" className="primary-btn">Sign In</button>
-                        <button type="submit" className="primary-btn">Sign In With Demo</button>
+                        <button type="submit" className="primary-btn" onClick={loginDemoModels}>Sign In With Demo</button>
                         <div className="flex justify-center items-center gap-1.5 text-footer">
                             <p>New on our platform?</p>
                             <label className="cursor-pointer" onClick={redirectToRegistration}>Create an account</label>

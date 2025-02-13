@@ -1,10 +1,10 @@
 .app-wrapper {
     background-color: #0a0a0a;
-    background-color: var(--app-bg);
-    // background-color: red;
+    //background-color: var(--app-bg);
     min-height: 95vh;
     padding: 0rem;
     padding-bottom: 0;
+    position: relative;
 
     .main-wrapper {
         position: relative;
@@ -16,9 +16,8 @@
         flex-wrap: wrap !important;
 
         .main-content-section {
+           
             min-height: calc(-100px + 100vh);
-           // padding: 0.6rem;
-            width: 100%;
             margin-bottom: 10px;
             overflow-y: scroll;
 
@@ -48,6 +47,24 @@
 ._outletWidth{
     //width: 100%;
     width: calc(-110px + 90vw);
-    background-color: red;
-    
+}
+
+.sidebarCloseClass{
+    margin-left: -8rem;
+}
+
+@media only screen and (max-width: 1041px){
+    .sidebarCloseClass{
+        margin-left: 0rem;
+    }
+    .app-wrapper{
+        .main-wrapper{
+            padding-left: 0;
+            padding-right: 0;
+            .main-content-section{
+                min-height: auto;
+                margin-left: 0rem;
+            }
+        }
+    }
 }

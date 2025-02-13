@@ -3,14 +3,14 @@
     border-top: 2px solid #ac9bff80;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
     padding: 2rem 4rem;
     transition: all .3s ease;
     margin-top: 1.5rem;
 
     .footer-conatiner {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: center;
         align-items: center;
         color: #989898;
         gap: 1rem;
@@ -68,6 +68,20 @@
             }
             &:hover{
                 color: #ac73ff;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1041px){
+    .app-footer{
+        padding: 1rem;
+        .footer-conatiner{
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            .row-1, .row-2, .row-3{
+                width: auto;
             }
         }
     }

@@ -23,7 +23,7 @@ const Dashboard = () => {
         <Navbar />
         <div className="main-wrapper w-[100%]">
           <SidebarNavigation />
-          <div className={`w-[100vw] duration-400 ${sidebarState && '-ml-32'}`}>
+          <div className={`w-[100vw] duration-400 px-2 ${sidebarState && 'sidebarCloseClass'}`}>
             <div className="main-content-section">
               <div className="news-feed">
                 <span className="news-title">News : </span>

@@ -1,4 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import { IsloginGuard } from "../_guards/LoginGuard";
 import AppDashBoard from "../pages/AppDashBoard";
 import AppOutlet from "../components/subcomponents/AppOutlet";
 import AppoutletVerify from "../_guards/AppoutletVerify";
@@ -9,6 +10,9 @@ import AccountStakeButton from "../components/accounts/AccountStakeButton";
 import AccountTranscation from "../components/accounts/AccountTranscation";
 import AccountBonusList from "../components/accounts/AccountBonusList";
 import AccountOpenBets from "../components/accounts/AccountOpenBets";
+import Deposit from "../components/subcomponents/Deposit";
+import Casino from "../components/casino/Casino";
+import Promotion from "../components/subcomponents/Promotion";
 
 const router = createBrowserRouter([
     {
@@ -17,102 +21,122 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to="/sport/Inplay"/>,
+                element: <Navigate to="/sport/Inplay" />,
             },
             {
                 path: "/sport/Inplay",
-                element: <AppOutlet/>
+                element: <AppOutlet />
             },
             {
                 path: "/sport/upcoming",
                 element: (
-                <AppoutletVerify>
-                    <AppOutlet/>
-                </AppoutletVerify>
+                    <AppoutletVerify>
+                        <AppOutlet />
+                    </AppoutletVerify>
                 ),
             },
             {
                 path: "/sport/cricket",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/sport/Tennis",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/sport/FootBall",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/sport/Jackpot",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/sport/Cricket Casino",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/sport/Election",
-                element:  (
+                element: (
                     <AppoutletVerify>
-                        <AppOutlet/>
+                        <AppOutlet />
                     </AppoutletVerify>
-                    ),
+                ),
             },
             {
                 path: "/account",
-                element: <Accounts/>,
+                element: (
+                    <IsloginGuard>
+                        <Accounts />
+                    </IsloginGuard>
+                ),
                 children: [
                     {
                         index: true,
                         path: "/account/user-profile",
-                        element: <AccountStatements/>
+                        element: <AccountStatements />
                     },
                     {
                         path: "/account/account-statement",
-                        element: <AccountStatements/>
+                        element: <AccountStatements />
                     },
                     {
                         path: "/account/account-withdraw",
-                        element: <AccountWithdraw/>
+                        element: <AccountWithdraw />
                     },
                     {
                         path: "/account/change-stakeButton",
-                        element: <AccountStakeButton/>
+                        element: <AccountStakeButton />
                     },
                     {
                         path: "/account/transaction-history",
-                        element: <AccountTranscation/>
+                        element: <AccountTranscation />
                     },
                     {
                         path: "/account/bonus",
-                        element: <AccountBonusList/>
+                        element: <AccountBonusList />
                     },
                     {
                         path: "/account/open-bets",
-                        element: <AccountOpenBets/>
+                        element: <AccountOpenBets />
                     }
                 ]
+            },
+            {
+                path: "/user/deposit",
+                element: (
+                    <IsloginGuard>
+                        <Deposit />
+                    </IsloginGuard>
+                )
+            },
+            {
+                path: "/casino",
+                element: <Casino/>
+            },
+            {
+                path: "/promotion",
+                element: <Promotion/>
             }
         ],
     },

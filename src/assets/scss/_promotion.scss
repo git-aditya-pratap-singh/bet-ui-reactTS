@@ -1,0 +1,42 @@
+.promo-logo {
+    background: url('../img/icons.png') 0 -120px !important;
+    background-repeat: no-repeat !important;
+    height: 24px !important;
+    width: 24px !important;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.no-data {
+    align-items: center;
+    color: #848484;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    img {
+        filter: brightness(.5) grayscale(1);
+        max-width: 300px;
+        vertical-align: middle;
+    }
+
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,29 @@
+.header-logo {
+    background: url('../img/icons.png') 0 0 !important;
+    background-repeat: no-repeat !important;
+    height: 24px !important;
+    width: 24px !important;
+}
+.header-title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+.btnTavb{
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    color: var(--btn-primay-color);
+    font-size: 14px;
+    font-weight: 500;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    width: auto;
+    &:hover{
+        background-color: #ac73ff;
+        cursor: pointer;
+    }
+}

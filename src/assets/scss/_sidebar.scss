@@ -196,21 +196,29 @@
 
 .subMenuSide{
     transition: height 0.8s ease-in-out;
-
 }
 
 @media only screen and (max-width: 1041px){
     .sidebar-cover{
-       //width: 70px;
+       width: 200px;
+       position: fixed;
+       z-index: 2;
+       left: 5px;
+       top: -1.3rem;
+       transform: translateX(-300px);
         .firstUl{
             li{
                 label{
-                    display: none;
+                    display: block;
                 }
                 svg{
-                    display: none
+                    display: block;
                 }
             }
         }
+    }
+    .sidebar-close {
+        transform: translateX(0);
+        transition: all .3s ease;
     }
 }

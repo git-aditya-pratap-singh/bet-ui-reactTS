@@ -40,7 +40,7 @@ const Sidebar = () => {
     }
 
     return (
-        <section className={`sidebar-cover ${sidebarState && 'sidebar-close '} `}>
+        <section className={`sidebar-cover ${sidebarState && 'sidebar-close'} `}>
             <ul className="firstUl">
                 {
                     sidebarData.map((items) => {

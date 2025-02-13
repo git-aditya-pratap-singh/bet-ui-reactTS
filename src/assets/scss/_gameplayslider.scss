@@ -6,6 +6,7 @@
     top: 0px;
     width: 275px;
     overflow: hidden auto;
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -74,6 +75,27 @@
             }
 
 
+        }
+    }
+}
+
+@media only screen and (max-width: 1041px) {
+    .sideBanner-grid {
+        margin-top: 0px;
+        width: 100vw;
+        position: static;
+        margin-top: 0;
+        padding: 0.35rem;
+
+        .gridSystem {
+            justify-content: center;
+
+            .content {
+                img {
+                    height: 150px;
+                    width: 180px !important;
+                }
+            }
         }
     }
 }

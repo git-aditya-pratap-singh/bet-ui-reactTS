@@ -6,6 +6,7 @@ const StateSlice = createSlice({
         open_sidebar: false,
         loginPopup: false,
         registrationPopup: false,
+        profilePopup: false,
         app_outlet: {
             outletName: "Live Events",
             outletIcon: 'liveEvents',
@@ -23,6 +24,9 @@ const StateSlice = createSlice({
         func_registrationPopup: (state, action)=>{
             state.registrationPopup = action.payload
         },
+        func_profilePopup: (state, action)=>{
+            state.profilePopup = action.payload
+        },
         func_appOutlet: (state, action)=>{
             state.app_outlet.outletName = action.payload.name;
             state.app_outlet.outletIcon = action.payload.outletIcon;
@@ -32,4 +36,4 @@ const StateSlice = createSlice({
 })
 
 export default StateSlice;
-export const {sidebar, func_appOutlet, func_loginPopup, func_registrationPopup } = StateSlice.actions;
+export const {sidebar, func_appOutlet, func_loginPopup, func_registrationPopup, func_profilePopup } = StateSlice.actions;

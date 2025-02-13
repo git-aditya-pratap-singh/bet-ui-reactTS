@@ -149,3 +149,14 @@
 
     }
 }
+
+@media only screen and (max-width: 1041px){
+    .loginBackDiv{
+        .loginContainer{
+            padding: 1.5rem;
+            .imageBanner{
+                display: none;
+            }
+        }
+    }
+}

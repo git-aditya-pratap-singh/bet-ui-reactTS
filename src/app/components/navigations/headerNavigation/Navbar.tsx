@@ -4,33 +4,39 @@ import logo from '../../../../assets/img/logo.png';
 import headerNavigation from './headerNavigation';
 import DropDownProfile from '../../subcomponents/DropDownProfile';
 import SearchModels from "../../subcomponents/SearchModels";
-import {sidebar, func_loginPopup, func_registrationPopup} from "../../../redux/slices/StateSlice";
+import { sidebar, func_loginPopup, func_registrationPopup, func_profilePopup } from "../../../redux/slices/StateSlice";
 
 import "../../../../assets/scss/_navBar.scss";
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const sidebarState = useSelector((store: any) => store.centerliazedStore.open_sidebar);
+    const profileState = useSelector((store: any) => store.centerliazedStore.profilePopup);
 
-    const [toggle, setToggle] = useState(false);
     const [withdrawtoggle, setwithdrawToggle] = useState(false);
     const [searchToggle, setsearchToggle] = useState(false);
-    const [active, setActive] = useState(1);
-    const location = useLocation();
-    console.log(location)
+    const [activeId, setActiveId] = useState(1);
+
+    const loginStatus = localStorage.getItem('loginStatus');
+
+    const handleClick = (id: number, name: string) => {
+        setActiveId(id);
+        navigate(id === 1 ? 'sport/inplay' : `${name.toLowerCase()}`);
+    };
 
     return (
         <section className="app-header">
 
-            { toggle && <DropDownProfile/>}
-            {searchToggle && <SearchModels/>}
+            {profileState && <DropDownProfile />}
+            {searchToggle && <SearchModels />}
 
             <div className='nav-header'>
                 <div className="nav-header-sectionA">
-                    <button type="button" onClick={()=> dispatch(sidebar(!sidebarState))}
-                    className="btn btn-sm ps-1 pe-2 me-2 fs-16 header-item vertical-menu-btn topnav-hamburger">
+                    <button type="button" onClick={() => dispatch(sidebar(!sidebarState))}
+                        className="btn btn-sm ps-1 pe-2 me-2 fs-16 header-item vertical-menu-btn topnav-hamburger">
                         <span className={`hamburger-icon ${sidebarState && 'open'}`}>
                             <span></span>
                             <span></span>
@@ -47,7 +53,8 @@ const Navbar = () => {
                         {
                             headerNavigation.map((items) => {
                                 return (
-                                    <li key={items?.id} className={`${active == 1 ? 'active' : ''}`}>
+                                    <li key={items?.id} className={`${items.id === activeId ? 'active' : ''}`}
+                                    onClick={()=>handleClick(items.id, items.name)}>
                                         <span className="navIcon1" ></span>
                                         <label>{items?.name}</label>
                                     </li>
@@ -60,13 +67,15 @@ const Navbar = () => {
 
                 <div className="nav-header-sectionC">
 
-                    <button type="button" aria-haspopup="true" aria-expanded="false" onClick={()=>setwithdrawToggle(!withdrawtoggle)}
-                        className="dropdown-toggle">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.25 9C14.25 9.41421 13.9142 9.75 13.5 9.75C13.0858 9.75 12.75 9.41421 12.75 9C12.75 8.58579 
+                    {
+                        loginStatus && (
+                            <button type="button" aria-haspopup="true" aria-expanded="false" onClick={() => setwithdrawToggle(!withdrawtoggle)}
+                                className="dropdown-toggle">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.25 9C14.25 9.41421 13.9142 9.75 13.5 9.75C13.0858 9.75 12.75 9.41421 12.75 9C12.75 8.58579 
                     13.0858 8.25 13.5 8.25C13.9142 8.25 14.25 8.58579 14.25 9Z" fill="white">
-                            </path>
-                            <path fillRule="evenodd" clipRule="evenodd" d="M7.45769 2.4375H9.79231C11.1706 2.43749 12.2624 2.43748 13.1168 
+                                    </path>
+                                    <path fillRule="evenodd" clipRule="evenodd" d="M7.45769 2.4375H9.79231C11.1706 2.43749 12.2624 2.43748 13.1168 
                     2.55235C13.9961 2.67057 14.7078 2.91966 15.2691 3.48093C15.9624 4.17422 16.1833 5.10272 16.2635 6.30756C16.6964
                      6.49808 17.0233 6.90098 17.0594 7.41134C17.0626 7.45649 17.0625 7.50515 17.0625 7.55026C17.0625 7.55437 17.0625 
                      7.55845 17.0625 7.5625V10.4375C17.0625 10.4415 17.0625 10.4456 17.0625 10.4497C17.0625 10.4949 17.0626 10.5435 
@@ -91,32 +100,42 @@ const Navbar = () => {
                      15.9372 10.5057 15.9373 10.4989C15.9375 10.4856 15.9375 10.4679 15.9375 10.4375V7.5625C15.9375 7.53212 15.9375 
                      7.51438 15.9373 7.50107C15.9372 7.49429 15.9371 7.48957 15.9371 7.48957C15.932 7.42682 15.8655 7.32248 15.711 
                      7.31307C15.711 7.31307 15.7073 7.31282 15.6926 7.31267Z" fill="white">
-                            </path>
-                        </svg>
-                        <span className="text-white">0.00</span>
-                    </button>
+                                    </path>
+                                </svg>
+                                <span className="text-white">0.00</span>
+                            </button>
+                        )
+                    }
 
-                    { withdrawtoggle && <Withdrawl/>}
 
-                    {/* <button className="theme-btn depositBtn">
-                        <span className='icon1'></span>
-                        <label>Deposit</label>
-                    </button>
-                    <button className="theme-btn withdrawalBtn">
-                        <span className='icon2'></span>
-                        <label>Withdrawal</label>
-                    </button> */}
+                    {withdrawtoggle && <Withdrawl />}
 
-                    <button className="theme-btn login" onClick={()=>dispatch(func_loginPopup(true))}>
-                        <span className='icon1'></span>
-                        <label>Login</label>
-                    </button>
-                    <button className="theme-btn register" onClick={()=> dispatch(func_registrationPopup(true))}>
-                        <span className='icon1'></span>
-                        <label>Register</label>
-                    </button>
+                    {
+                        loginStatus ? (
+                            <>
+                                <button className="theme-btn depositBtn" onClick={() => navigate('user/deposit')}>
+                                    <span className="icon1"></span>
+                                    <label className='text'>Deposit</label>
+                                </button>
+                                <button className="theme-btn withdrawalBtn" onClick={() => navigate('account/account-withdraw')}>
+                                    <span className="icon2"></span>
+                                    <label className='text'>Withdrawal</label>
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <button className="theme-btn login" onClick={() => dispatch(func_loginPopup(true))}>
+                                    <label className=''>Login</label>
+                                </button>
+                                <button className="theme-btn register" onClick={() => dispatch(func_registrationPopup(true))}>
+                                    <label>Register</label>
+                                </button>
+                            </>
+                        )
+                    }
 
-                    <div className="svgIcon" onClick={()=> setsearchToggle(!searchToggle)}>
+
+                    <div className="svgIcon" onClick={() => setsearchToggle(!searchToggle)}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
                             <path className="s-bg" d="M0 5.76562C0 2.58136 2.68629 0 6 0H24C27.3137 0 30 2.58136 30 5.76562V23.0625C30 26.2468 27.3137 28.8281 
                             24 28.8281H6C2.68629 28.8281 0 26.2468 0 23.0625V5.76562Z" fill="#1A1E24"></path><path d="M10.2319 8.876C11.8073 9.79842 13.8612 
@@ -149,16 +168,20 @@ const Navbar = () => {
                         </svg>
                     </div>
 
-                    <div className='svgIcon' onClick={()=> setToggle(!toggle)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
-                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 
+                    {
+                        loginStatus && (
+                            <div className='svgIcon' onClick={() => dispatch(func_profilePopup(!profileState))}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 
                    15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="white" strokeWidth="2" strokeLinecap="round"
-                                strokeLinejoin="round"></path><path id="userhead" d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 
+                                        strokeLinejoin="round"></path><path id="userhead" d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 
                    3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="white" strokeWidth="2" strokeLinecap="round"
-                                    strokeLinejoin="round">
-                            </path>
-                        </svg>
-                    </div>
+                                            strokeLinejoin="round">
+                                    </path>
+                                </svg>
+                            </div>
+                        )
+                    }
 
                 </div>
             </div>
@@ -166,8 +189,8 @@ const Navbar = () => {
     )
 }
 
-const Withdrawl = ()=>{
-    return(
+const Withdrawl = () => {
+    return (
         <section className='withdraw'>
             <div className='flex items-center gap-1 text-[0.75rem]'>
                 <p>Withdrawal:</p>
